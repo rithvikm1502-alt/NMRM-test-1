@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CleanStart Partner — NMRM Infotech</title>
+<meta name="description" content="NMRM Infotech delivers CleanStart hardened, CVE-free container base images for secure cloud-native software supply chains." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<style>
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .product-grid { grid-template-columns: 1fr; } }
+  .product {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 26px;
+    transition: all .25s ease;
+  }
+  .product:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .product .tag {
+    display: inline-block; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--cyan); font-weight: 700;
+    background: rgba(34,211,238,0.1); padding: 4px 10px; border-radius: 999px;
+    border: 1px solid rgba(34,211,238,0.2);
+  }
+  .product h3 { font-family: var(--font-display); margin: 14px 0 8px; color: var(--text); font-size: 18px; }
+  .product p  { color: var(--text-muted); font-size: 14px; margin: 0; }
+  .usecase {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+  }
+  .usecase h4 { font-family: var(--font-display); color: var(--cyan); margin: 0 0 8px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+  .usecase p { color: var(--text); font-size: 15px; margin: 0; }
+  .ucgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .ucgrid { grid-template-columns: 1fr; } }
+
+  .vendor-hero {
+    background:
+      radial-gradient(800px 400px at 80% -20%, rgba(168, 85, 247, 0.22), transparent 60%),
+      radial-gradient(600px 400px at 0% 50%, rgba(34,211,238,0.15), transparent 60%),
+      linear-gradient(180deg, #07101F 0%, #0B1729 100%);
+  }
+  .vendor-mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 10px 18px; background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); border-radius: 999px;
+    font-family: var(--font-display); font-weight: 700; color: var(--text); font-size: 14px;
+  }
+  .vendor-mark .swatch { width: 14px; height: 14px; border-radius: 4px; background: #A855F7; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="partners.html" class="active">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero vendor-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="partners.html">Partners</a> &nbsp;/&nbsp; CleanStart</div>
+    <div style="margin: 16px 0 12px;"><span class="vendor-mark"><span class="swatch"></span> CleanStart Partner</span></div>
+    <h1 class="reveal">CVE-free container images for a <span style="color: var(--cyan)">secure software supply chain</span>.</h1>
+    <p class="reveal">Enterprises running containerized workloads inherit thousands of vulnerabilities from base images — outdated packages, unpatched libraries, unnecessary dependencies — creating a large, often invisible attack surface before applications are even deployed.</p>
+    <div class="hero-cta reveal" style="margin-top: 28px;">
+      <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+      <a href="#products" class="btn btn-secondary">Explore Capabilities</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="badge">The Challenge</span>
+        <h3>Most container vulnerabilities arrive in the base image.</h3>
+        <p>Generic base images carry years of accumulated CVEs and unnecessary packages. Patching them post-deployment is a treadmill — and it doesn't fix supply-chain risk.</p>
+        <ul class="feature-bullets">
+          <li>Thousands of inherited CVEs in base images</li>
+          <li>Unnecessary packages expanding attack surface</li>
+          <li>Software supply-chain integrity gaps</li>
+          <li>Compliance reporting burden (SBOM, provenance)</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>What NMRM Delivers</h4>
+        <ul>
+          <li><span class="pill">Assess</span> Base image risk analysis</li>
+          <li><span class="pill">Deploy</span> CleanStart image catalog rollout</li>
+          <li><span class="pill">Integrate</span> With CI/CD and registry</li>
+          <li><span class="pill">Operate</span> Continuous compliance & SBOM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="products" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> The Platform</span>
+      <h2>Hardened images. Continuous rebuilds. Full SBOM.</h2>
+      <p>A secure foundation for modern cloud-native applications.</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="product reveal">
+        <span class="tag">Images</span>
+        <h3>CVE-Free Base Images</h3>
+        <p>Minimal, hardened container images for the most common runtimes and frameworks.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">SBOM</span>
+        <h3>Software Bill of Materials</h3>
+        <p>Full provenance and component transparency for every image.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Pipeline</span>
+        <h3>Continuous Compliance</h3>
+        <p>Rebuilt and verified images entering your pipeline — no manual patching.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Use Cases</span>
+      <h2>Where NMRM deploys CleanStart in India.</h2>
+    </div>
+    <div class="ucgrid reveal">
+      <div class="usecase">
+        <h4>BFSI</h4>
+        <p>Regulated banking apps with CVE-free runtimes and full SBOM provenance.</p>
+      </div>
+      <div class="usecase">
+        <h4>Government</h4>
+        <p>Sovereign cloud workloads with auditable software supply chain.</p>
+      </div>
+      <div class="usecase">
+        <h4>ISVs</h4>
+        <p>Secure base images shipping with commercial container products.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="feature-row reverse">
+      <div class="feature-text reveal">
+        <span class="badge">Why NMRM</span>
+        <h3>Supply-chain security, productized.</h3>
+        <p>We help enterprises operationalize CleanStart — from registry integration to developer workflows — so secure images become the default, not an exception.</p>
+        <ul class="feature-bullets">
+          <li>Container supply-chain risk assessment</li>
+          <li>CleanStart image catalog onboarding</li>
+          <li>CI/CD and registry integration</li>
+          <li>SBOM, attestation, and compliance reporting</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation →</a>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>Engagement Models</h4>
+        <ul>
+          <li><span class="pill">Advisory</span> Supply-chain risk review</li>
+          <li><span class="pill">Project</span> CleanStart catalog rollout</li>
+          <li><span class="pill">Integration</span> CI/CD & registry</li>
+          <li><span class="pill">Managed</span> Compliance & reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge">Briefing</span>
+      <h2>Book a CleanStart briefing.</h2>
+      <p>Our team will walk through the CleanStart portfolio and map it to your environment — a structured 45-minute session, no obligation.</p>
+      <div class="actions">
+        <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+        <a href="partners.html" class="btn btn-secondary">Browse Other Partners</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+        </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div><h5>Solutions</h5><ul>
+      <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+      <li><a href="services.html#dataprotection">Data Protection</a></li>
+      <li><a href="services.html#infrastructure">Infrastructure</a></li>
+    </ul></div>
+    <div><h5>Company</h5><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="epr-waste-management.html">EPR &amp; E-Waste</a></li>
+    </ul></div>
+    <div><h5>Contact</h5><ul>
+      <li style="color: var(--text-muted); font-size: 14px;">Mumbai-400065</li>
+      <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+      <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

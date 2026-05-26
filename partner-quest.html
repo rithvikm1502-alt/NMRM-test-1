@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quest Software Partner — NMRM Infotech</title>
+<meta name="description" content="NMRM Infotech delivers Quest Software identity, Active Directory, database, and migration solutions for enterprise IT." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<style>
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .product-grid { grid-template-columns: 1fr; } }
+  .product {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 26px;
+    transition: all .25s ease;
+  }
+  .product:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .product .tag {
+    display: inline-block; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--cyan); font-weight: 700;
+    background: rgba(34,211,238,0.1); padding: 4px 10px; border-radius: 999px;
+    border: 1px solid rgba(34,211,238,0.2);
+  }
+  .product h3 { font-family: var(--font-display); margin: 14px 0 8px; color: var(--text); font-size: 18px; }
+  .product p  { color: var(--text-muted); font-size: 14px; margin: 0; }
+  .usecase {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+  }
+  .usecase h4 { font-family: var(--font-display); color: var(--cyan); margin: 0 0 8px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+  .usecase p { color: var(--text); font-size: 15px; margin: 0; }
+  .ucgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .ucgrid { grid-template-columns: 1fr; } }
+
+  .vendor-hero {
+    background:
+      radial-gradient(800px 400px at 80% -20%, rgba(99, 102, 241, 0.18), transparent 60%),
+      radial-gradient(600px 400px at 0% 50%, rgba(34,211,238,0.15), transparent 60%),
+      linear-gradient(180deg, #07101F 0%, #0B1729 100%);
+  }
+  .vendor-mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 10px 18px; background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); border-radius: 999px;
+    font-family: var(--font-display); font-weight: 700; color: var(--text); font-size: 14px;
+  }
+  .vendor-mark .swatch { width: 14px; height: 14px; border-radius: 4px; background: #4F46E5; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="partners.html" class="active">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero vendor-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="partners.html">Partners</a> &nbsp;/&nbsp; Quest Software</div>
+    <div style="margin: 16px 0 12px;"><span class="vendor-mark"><span class="swatch"></span> Quest Software Partner</span></div>
+    <h1 class="reveal">Microsoft platform management, <span style="color: var(--cyan)">done right</span>.</h1>
+    <p class="reveal">Quest delivers identity, Active Directory, database, and migration solutions that simplify complex enterprise IT operations — trusted for Microsoft platform management, monitoring, and security across hybrid environments.</p>
+    <div class="hero-cta reveal" style="margin-top: 28px;">
+      <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+      <a href="#products" class="btn btn-secondary">Explore Capabilities</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="badge">The Challenge</span>
+        <h3>AD and SQL Server are still mission-critical — and still complex.</h3>
+        <p>Native Microsoft tools leave gaps in security, recovery, migration, and reporting. Quest closes them with purpose-built tooling refined over decades.</p>
+        <ul class="feature-bullets">
+          <li>Active Directory security, recovery, and auditing</li>
+          <li>Tenant-to-tenant Microsoft 365 migration</li>
+          <li>SQL Server performance and DBA productivity</li>
+          <li>Hybrid identity and Entra ID governance</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>What NMRM Delivers</h4>
+        <ul>
+          <li><span class="pill">Assess</span> AD/Entra security review</li>
+          <li><span class="pill">Deploy</span> Quest tooling rollouts</li>
+          <li><span class="pill">Migrate</span> M365 tenant consolidation</li>
+          <li><span class="pill">Operate</span> Ongoing support & training</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="products" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> The Platform</span>
+      <h2>Identity, data, and migration tooling.</h2>
+      <p>Purpose-built for Microsoft environments and the realities of enterprise IT.</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="product reveal">
+        <span class="tag">Identity</span>
+        <h3>AD & Entra Management</h3>
+        <p>Security, recovery, auditing, and governance for hybrid identity.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Migration</span>
+        <h3>On Demand Migration</h3>
+        <p>Tenant-to-tenant M365 migration, mailbox, OneDrive, Teams, and SharePoint.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Database</span>
+        <h3>Toad & Foglight</h3>
+        <p>Database development, performance management, and monitoring for SQL Server and Oracle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Use Cases</span>
+      <h2>Where NMRM deploys Quest Software in India.</h2>
+    </div>
+    <div class="ucgrid reveal">
+      <div class="usecase">
+        <h4>M&A</h4>
+        <p>Tenant consolidation and Active Directory migration during acquisitions.</p>
+      </div>
+      <div class="usecase">
+        <h4>Security</h4>
+        <p>AD auditing, change tracking, and disaster recovery for ransomware events.</p>
+      </div>
+      <div class="usecase">
+        <h4>DBA Teams</h4>
+        <p>SQL Server performance management and development productivity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="feature-row reverse">
+      <div class="feature-text reveal">
+        <span class="badge">Why NMRM</span>
+        <h3>Decades of Microsoft platform delivery in one team.</h3>
+        <p>We've delivered Quest tooling across some of India's most complex Microsoft environments — from AD recovery rehearsals to tenant migrations spanning thousands of mailboxes.</p>
+        <ul class="feature-bullets">
+          <li>AD security, audit, and recovery design</li>
+          <li>Tenant-to-tenant M365 migration delivery</li>
+          <li>SQL Server performance baselines & monitoring</li>
+          <li>Long-term training and admin enablement</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation →</a>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>Engagement Models</h4>
+        <ul>
+          <li><span class="pill">Advisory</span> Identity & migration planning</li>
+          <li><span class="pill">Project</span> Tool rollouts & migrations</li>
+          <li><span class="pill">Recovery</span> AD DR rehearsals</li>
+          <li><span class="pill">Managed</span> Ongoing platform support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge">Briefing</span>
+      <h2>Book a Quest Software briefing.</h2>
+      <p>Our team will walk through the Quest Software portfolio and map it to your environment — a structured 45-minute session, no obligation.</p>
+      <div class="actions">
+        <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+        <a href="partners.html" class="btn btn-secondary">Browse Other Partners</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+        </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div><h5>Solutions</h5><ul>
+      <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+      <li><a href="services.html#dataprotection">Data Protection</a></li>
+      <li><a href="services.html#infrastructure">Infrastructure</a></li>
+    </ul></div>
+    <div><h5>Company</h5><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="epr-waste-management.html">EPR &amp; E-Waste</a></li>
+    </ul></div>
+    <div><h5>Contact</h5><ul>
+      <li style="color: var(--text-muted); font-size: 14px;">Mumbai-400065</li>
+      <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+      <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

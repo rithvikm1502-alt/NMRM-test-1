@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EPR & E-Waste Management — NMRM Infotech</title>
+<meta name="description" content="NMRM Infotech's e-waste take-back and recycling programme adheres to the E-Waste (Management) Rules, 2016 issued by the Ministry of Environment and Forest, Government of India. Free, compliant recycling for centralised data processing equipment." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<style>
+  /* Eco-tinted hero overlay over the standard dark theme */
+  .eco-hero {
+    background:
+      radial-gradient(900px 480px at 80% -10%, rgba(34, 197, 94, 0.18), transparent 60%),
+      radial-gradient(700px 420px at 0% 30%, rgba(34, 211, 238, 0.14), transparent 60%),
+      linear-gradient(180deg, #07101F 0%, #0B1729 100%);
+  }
+  .leaf-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; border-radius: 999px;
+    background: rgba(34, 197, 94, 0.10);
+    border: 1px solid rgba(34, 197, 94, 0.30);
+    color: #4ADE80; font-weight: 700; font-size: 12px;
+    letter-spacing: 2px; text-transform: uppercase;
+  }
+  .leaf-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 10px #4ADE80; }
+
+  .epr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .epr-grid { grid-template-columns: 1fr; } }
+  .epr-card {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 28px;
+    transition: all .25s ease;
+    position: relative;
+  }
+  .epr-card:hover { border-color: rgba(34,197,94,0.45); transform: translateY(-2px); }
+  .epr-card .num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, #22D3EE 0%, #1B3A6B 100%);
+    color: #06212B; font-weight: 800;
+    display: grid; place-items: center;
+    font-family: var(--font-display);
+    margin-bottom: 14px;
+  }
+  .epr-card h3 { font-family: var(--font-display); margin: 0 0 8px; color: var(--text); font-size: 18px; }
+  .epr-card p  { color: var(--text-muted); font-size: 14px; margin: 0; }
+
+  .compliance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 900px) { .compliance-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .compliance-grid { grid-template-columns: 1fr; } }
+  .compliance-tile {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px;
+    text-align: left;
+  }
+  .compliance-tile .ic {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, rgba(74,222,128,0.18), rgba(34,211,238,0.18));
+    border: 1px solid rgba(74,222,128,0.30);
+    display: grid; place-items: center;
+    font-size: 18px; color: #4ADE80;
+    margin-bottom: 12px;
+  }
+  .compliance-tile h4 { font-family: var(--font-display); margin: 0 0 4px; color: var(--text); font-size: 15px; }
+  .compliance-tile p  { color: var(--text-muted); margin: 0; font-size: 13px; line-height: 1.55; }
+
+  .hotline-card {
+    background:
+      radial-gradient(600px 280px at 80% 0%, rgba(34, 211, 238, 0.20), transparent 60%),
+      radial-gradient(500px 280px at 0% 100%, rgba(34, 197, 94, 0.16), transparent 60%),
+      linear-gradient(135deg, #0F2547 0%, #07101F 100%);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: center;
+  }
+  @media (max-width: 900px) { .hotline-card { grid-template-columns: 1fr; padding: 28px; } }
+  .hotline-card h2 { font-family: var(--font-display); color: var(--text); font-size: clamp(22px, 2.4vw, 28px); margin: 14px 0 14px; }
+  .hotline-card p  { color: var(--text-muted); margin: 0 0 18px; }
+  .hotline-stack { display: grid; gap: 14px; }
+  .hotline-item {
+    background: rgba(0,0,0,0.25);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: flex; gap: 14px; align-items: center;
+  }
+  .hotline-item .ic {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, rgba(74,222,128,0.18), rgba(34,211,238,0.20));
+    border: 1px solid rgba(74,222,128,0.30);
+    display: grid; place-items: center;
+    color: #4ADE80; font-size: 18px;
+    flex-shrink: 0;
+  }
+  .hotline-item .label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); }
+  .hotline-item .value { font-size: 17px; font-weight: 600; color: var(--text); margin-top: 2px; }
+  .hotline-item .value a { color: var(--text); }
+  .hotline-item .value a:hover { color: var(--cyan); }
+
+  .faq { display: grid; gap: 14px; }
+  .faq-item {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 26px;
+  }
+  .faq-item h4 {
+    font-family: var(--font-display);
+    color: var(--text);
+    font-size: 16px;
+    margin: 0 0 8px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .faq-item h4::before {
+    content: "Q."; font-size: 12px; padding: 2px 8px;
+    background: rgba(34,211,238,0.10);
+    color: var(--cyan);
+    border-radius: 6px; letter-spacing: 1px;
+    border: 1px solid rgba(34,211,238,0.20);
+  }
+  .faq-item p { color: var(--text-muted); font-size: 14px; margin: 0; line-height: 1.65; }
+  .faq-item strong { color: var(--text); font-weight: 600; }
+
+  .pledge {
+    background: linear-gradient(120deg, rgba(34,197,94,0.06) 0%, rgba(34,211,238,0.06) 100%);
+    border: 1px solid rgba(74,222,128,0.20);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .pledge em { color: #4ADE80; font-style: normal; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero eco-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; EPR &amp; E-Waste Management</div>
+    <div style="margin: 14px 0 10px;"><span class="leaf-badge"><span class="dot"></span> Recycling for a Greener World</span></div>
+    <h1 class="reveal">Product Take-Back &amp; <span style="color: #4ADE80;">E-Waste Recycling</span> Programme.</h1>
+    <p class="reveal">NMRM Infotech's e-waste take-back and recycling service adheres to the E-Waste (Management) Rules, 2016 issued by the Ministry of Environment and Forest, Government of India. When your IT equipment reaches the end of its life, we take it back and recycle it — at no cost to you.</p>
+    <div class="hero-cta reveal" style="margin-top: 26px;">
+      <a href="tel:18001030747" class="btn btn-cyan">📞 Call EPR Hotline: 1800-103-0747</a>
+      <a href="mailto:epr@r2promise.com" class="btn btn-secondary">epr@r2promise.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- Pledge -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="pledge reveal">
+      <strong style="color: var(--cyan); text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">Our Pledge</strong><br/>
+      To act responsibly towards the environment, NMRM Infotech has pledged to recycle <em>Centralised Data Processing equipment — Mainframes and Minicomputers (ITEW1)</em> that are intended to be discarded as waste by the consumer. When an electronic product reaches the end of its life, we take it back and recycle it. <strong>All NMRM Infotech products are RoHS compliant.</strong>
+      <br/><br/>
+      We believe that saving the environment is a shared responsibility between us and our consumers. Our Product Take-Back &amp; Recycling Programme is an e-waste management initiative towards reducing the environmental impact of our products. <em>Join us as we venture to save the environment.</em>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="leaf-badge"><span class="dot"></span> How It Works</span>
+      <h2 style="margin-top: 14px;">Three simple steps to compliant recycling.</h2>
+      <p>One call. One pickup. Fully audit-traceable disposal under E-Waste (Management) Rules, 2016.</p>
+    </div>
+    <div class="epr-grid">
+      <div class="epr-card reveal">
+        <div class="num">1</div>
+        <h3>Reach Out</h3>
+        <p>Call our toll-free hotline <strong style="color: var(--text);">1800-103-0747</strong> or write to <strong style="color: var(--text);">epr@r2promise.com</strong>. Our team will respond and guide you on the nearest collection centre.</p>
+      </div>
+      <div class="epr-card reveal">
+        <div class="num">2</div>
+        <h3>Drop-Off or Pickup</h3>
+        <p>Hand over your end-of-life equipment to the nearest authorised collection centre, or arrange a pickup through our Producer Responsibility Organisation partner.</p>
+      </div>
+      <div class="epr-card reveal">
+        <div class="num">3</div>
+        <h3>Compliant Recycling</h3>
+        <p>Equipment is recycled through CPCB-registered partner R2 PRO Pvt. Ltd. under the E-Waste (Management) Rules, 2016 — with full chain-of-custody traceability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hotline / contact -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="hotline-card reveal">
+      <div>
+        <span class="leaf-badge"><span class="dot"></span> EPR Hotline</span>
+        <h2>Initiate take-back in under a minute.</h2>
+        <p>Our toll-free EPR hotline and email are monitored Monday through Saturday. We confirm pickup or drop-off arrangements within one business day.</p>
+        <p style="margin: 0; font-size: 13px; color: var(--text-dim);">Producer Responsibility Organisation Partner: <strong style="color: var(--text);">R2 PRO Pvt. Ltd.</strong> — registered with the Central Pollution Control Board (CPCB) for EPR implementation.</p>
+      </div>
+      <div class="hotline-stack">
+        <div class="hotline-item">
+          <div class="ic">📞</div>
+          <div>
+            <div class="label">Toll-Free Hotline</div>
+            <div class="value"><a href="tel:18001030747">1800-103-0747</a></div>
+          </div>
+        </div>
+        <div class="hotline-item">
+          <div class="ic">📧</div>
+          <div>
+            <div class="label">EPR Email</div>
+            <div class="value"><a href="mailto:epr@r2promise.com">epr@r2promise.com</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What is eligible -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="leaf-badge"><span class="dot"></span> What You Can Recycle</span>
+      <h2 style="margin-top: 14px;">Eligible categories under E-Waste Rules 2016.</h2>
+      <p>Under E-Waste Management &amp; Handling Rules 2016, we will accept and recycle the following category — sold in India, irrespective of their brand.</p>
+    </div>
+    <div class="compliance-grid reveal">
+      <div class="compliance-tile">
+        <div class="ic">🖥️</div>
+        <h4>ITEW1 — Mainframes</h4>
+        <p>Centralised data processing mainframes at end of life.</p>
+      </div>
+      <div class="compliance-tile">
+        <div class="ic">💻</div>
+        <h4>ITEW1 — Minicomputers</h4>
+        <p>Centralised data processing minicomputers at end of life.</p>
+      </div>
+      <div class="compliance-tile">
+        <div class="ic">✅</div>
+        <h4>Any Brand</h4>
+        <p>We accept equipment in this category irrespective of original manufacturer.</p>
+      </div>
+      <div class="compliance-tile">
+        <div class="ic">🇮🇳</div>
+        <h4>Sold in India</h4>
+        <p>Equipment must have been originally sold in India.</p>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 24px; color: var(--text-dim); font-size: 13px; max-width: 720px; margin-left: auto; margin-right: auto;">
+      <em>Notwithstanding anything contained herein, NMRM Infotech, its affiliates, agents, and representatives are not responsible for the breach or loss of any of your data. Please ensure all data is securely wiped prior to handover.</em>
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="leaf-badge"><span class="dot"></span> FAQs</span>
+      <h2 style="margin-top: 14px;">Common questions.</h2>
+    </div>
+    <div class="faq reveal" style="max-width: 880px; margin: 0 auto;">
+      <div class="faq-item">
+        <h4>Do I have to pay any fee to recycle my product?</h4>
+        <p><strong>No.</strong> Consumers do not have to pay any fee to recycle products sold in India under this programme.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Will I get any monetary benefit or discount for returning unused products?</h4>
+        <p><strong>Yes.</strong> Eligible products returned through this take-back and recycling programme qualify for a monetary benefit. Our hotline team will confirm details when you call.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Who handles the actual recycling?</h4>
+        <p>Recycling is performed by our Producer Responsibility Organisation partner, <strong>R2 PRO Pvt. Ltd.</strong>, which is registered with the <strong>Central Pollution Control Board (CPCB)</strong> for EPR implementation. The full chain of custody is traceable under E-Waste (Management) Rules, 2016.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is my data safe?</h4>
+        <p>You are responsible for wiping data prior to handover. NMRM Infotech, its affiliates, agents, and representatives are not responsible for the breach or loss of any data left on returned equipment. We recommend secure data destruction before dropping off any equipment.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Are NMRM Infotech products compliant with environmental standards?</h4>
+        <p>Yes. <strong>All NMRM Infotech products are RoHS compliant</strong> — meeting the Restriction of Hazardous Substances directive that limits the use of specific hazardous materials in electrical and electronic equipment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal" style="background:
+      radial-gradient(600px 300px at 80% 0%, rgba(74,222,128,0.20), transparent 60%),
+      radial-gradient(500px 300px at 0% 100%, rgba(34,211,238,0.18), transparent 60%),
+      linear-gradient(135deg, #0F2547 0%, #07101F 100%);">
+      <span class="leaf-badge"><span class="dot"></span> Take Action</span>
+      <h2 style="margin-top: 14px;">Ready to recycle? Let's start with a call.</h2>
+      <p>Reach our EPR hotline for free, compliant, audit-traceable e-waste recycling — pan-India.</p>
+      <div class="actions">
+        <a href="tel:18001030747" class="btn btn-cyan">📞 1800-103-0747</a>
+        <a href="mailto:epr@r2promise.com" class="btn btn-secondary">Email EPR Team →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+        </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India. All products RoHS compliant.</p>
+    </div>
+    <div>
+      <h5>Solutions</h5>
+      <ul>
+        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+        <li><a href="services.html#dataprotection">Data Protection</a></li>
+        <li><a href="services.html#infrastructure">Hybrid Infrastructure</a></li>
+        <li><a href="services.html#dataplatforms">Data Platforms &amp; AI</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="epr-waste-management.html">EPR &amp; E-Waste</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li style="color: var(--text-muted); font-size: 14px;">334, Mastermind-4, Royal Palms,<br/>Aarey Colony, Goregaon East,<br/>Mumbai-400065</li>
+        <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+        <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd. — All rights reserved.</div>
+    <div>EPR compliant under E-Waste (Management) Rules, 2016</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

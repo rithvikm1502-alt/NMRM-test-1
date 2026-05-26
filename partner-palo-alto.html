@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Palo Alto Networks Partner — NMRM Infotech</title>
+<meta name="description" content="NMRM Infotech delivers Palo Alto Networks Strata NGFW, Prisma Cloud CNAPP, and Cortex XSIAM to enterprises across India — designed, deployed, and supported by certified engineers." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<style>
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 1100px) { .product-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 700px) { .product-grid { grid-template-columns: 1fr; } }
+  .product {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 28px;
+    transition: all .25s ease; position: relative; overflow: hidden;
+  }
+  .product:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .product .tag {
+    display: inline-block; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--cyan); font-weight: 700;
+    background: rgba(34,211,238,0.1); padding: 4px 10px; border-radius: 999px;
+    border: 1px solid rgba(34,211,238,0.2);
+  }
+  .product h3 { font-family: var(--font-display); margin: 14px 0 8px; color: var(--text); font-size: 20px; }
+  .product p  { color: var(--text-muted); font-size: 14px; margin: 0 0 14px; }
+  .product ul { padding-left: 18px; color: var(--text); font-size: 13px; line-height: 1.7; margin: 0; }
+  .product ul li::marker { color: var(--cyan); }
+  .usecase {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+  }
+  .usecase h4 { font-family: var(--font-display); color: var(--cyan); margin: 0 0 8px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+  .usecase p { color: var(--text); font-size: 15px; margin: 0; }
+  .ucgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .ucgrid { grid-template-columns: 1fr; } }
+
+  .vendor-hero {
+    background:
+      radial-gradient(800px 400px at 80% -20%, rgba(255,107,53,0.20), transparent 60%),
+      radial-gradient(600px 400px at 0% 50%, rgba(34,211,238,0.15), transparent 60%),
+      linear-gradient(180deg, #07101F 0%, #0B1729 100%);
+  }
+  .vendor-mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 10px 18px; background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); border-radius: 999px;
+    font-family: var(--font-display); font-weight: 700; color: var(--text);
+    font-size: 14px;
+  }
+  .vendor-mark .swatch { width: 14px; height: 14px; border-radius: 4px; background: #FA582D; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="partners.html" class="active">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero vendor-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="partners.html">Partners</a> &nbsp;/&nbsp; Palo Alto Networks</div>
+    <div style="margin: 16px 0 12px;"><span class="vendor-mark"><span class="swatch"></span> Palo Alto Networks Partner</span></div>
+    <h1 class="reveal">AI-driven security for the <span style="color: var(--cyan)">modern enterprise</span>.</h1>
+    <p class="reveal">As enterprises adopt cloud-first architectures and AI-driven operations, traditional security tools struggle to keep pace — creating blind spots across SaaS, multi-cloud, and evolving attack surfaces. Palo Alto Networks delivers a unified, AI-driven security platform that closes those gaps.</p>
+    <div class="hero-cta reveal" style="margin-top: 28px;">
+      <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+      <a href="#products" class="btn btn-secondary">Explore Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- The Challenge -->
+<section class="section">
+  <div class="container">
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="badge">The Challenge</span>
+        <h3>Cloud, AI, and a perimeter that no longer exists.</h3>
+        <p>Enterprises now operate across SaaS, multi-cloud, AI services, and a workforce that connects from anywhere. Point security products create visibility gaps, inconsistent policy enforcement, and alert fatigue — while attackers move faster than ever.</p>
+        <ul class="feature-bullets">
+          <li>Visibility blind spots across cloud, SaaS, and AI workloads</li>
+          <li>Inconsistent zero-trust policy across users and branches</li>
+          <li>SOC overwhelmed by alerts, slow to triage and respond</li>
+          <li>Difficulty securing development pipelines and runtime simultaneously</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>What NMRM Delivers</h4>
+        <ul>
+          <li><span class="pill">Design</span> Architecture aligned to your risk profile</li>
+          <li><span class="pill">PoC</span> Validated in your environment before purchase</li>
+          <li><span class="pill">Deploy</span> Certified engineers, hardened build</li>
+          <li><span class="pill">Operate</span> 24×7 support and policy lifecycle</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Pillars -->
+<section class="section" id="products" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> The Platform</span>
+      <h2>Five pillars. One unified platform.</h2>
+      <p>Network, cloud, security operations, identity, and threat intelligence — connected by AI, simplified by integration.</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="product reveal">
+        <span class="tag">Strata · Network Security</span>
+        <h3>Next-Gen Firewall & SASE</h3>
+        <p>Zero-trust network security across users, branches, and data centers — with the industry's leading NGFW and Prisma Access SASE platform.</p>
+        <ul>
+          <li>PA-Series & VM-Series NGFW</li>
+          <li>Prisma Access SASE</li>
+          <li>Cloud-Delivered Security Services</li>
+          <li>Advanced URL & DNS filtering</li>
+        </ul>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Prisma Cloud · CNAPP</span>
+        <h3>Cloud-Native Security</h3>
+        <p>Code-to-cloud security covering CSPM, CWPP, CIEM, and AI-SPM for multi-cloud and AI environments.</p>
+        <ul>
+          <li>Posture management (CSPM)</li>
+          <li>Workload protection (CWPP)</li>
+          <li>Entitlement & identity (CIEM)</li>
+          <li>AI security posture (AI-SPM)</li>
+        </ul>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Cortex · SecOps</span>
+        <h3>AI-Driven SOC Platform</h3>
+        <p>XSIAM unifies SIEM, XDR, SOAR, and ASM into a single AI-driven security operations platform.</p>
+        <ul>
+          <li>Cortex XSIAM unified SOC</li>
+          <li>Cortex XDR endpoint detection</li>
+          <li>Cortex Xpanse attack surface</li>
+          <li>Automated playbook response</li>
+        </ul>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Idira · Identity Security</span>
+        <h3>Next-Generation Identity Security</h3>
+        <p>A unified control plane that secures every human, machine, and agentic identity for the AI enterprise — from first access to final session.</p>
+        <ul>
+          <li>Privileged Access Management (PAM)</li>
+          <li>Identity Governance & lifecycle</li>
+          <li>Secrets & machine-identity management</li>
+          <li>Agentic-AI identity controls</li>
+        </ul>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Unit 42 · Threat Services</span>
+        <h3>Threat Intel & Incident Response</h3>
+        <p>World-renowned threat researchers, elite incident responders, and security consultants — available 24×7 before, during, and after an incident.</p>
+        <ul>
+          <li>Incident Response retainer & engagement</li>
+          <li>Managed Detection & Response (MDR)</li>
+          <li>Proactive threat assessments</li>
+          <li>Global threat intelligence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Use Cases</span>
+      <h2>Where NMRM deploys Palo Alto in India.</h2>
+    </div>
+    <div class="ucgrid reveal">
+      <div class="usecase">
+        <h4>BFSI</h4>
+        <p>Datacenter perimeter, ATM network segmentation, and DLP for regulated banking workloads — including PA-Series and Prisma Cloud for hybrid cloud apps.</p>
+      </div>
+      <div class="usecase">
+        <h4>Government & PSU</h4>
+        <p>Zero-trust access for distributed offices, Cortex XSIAM-powered SOCs, and compliance-grade segmentation for mission-critical citizen services.</p>
+      </div>
+      <div class="usecase">
+        <h4>Manufacturing & Energy</h4>
+        <p>OT/IT segmentation, secure SD-WAN for plants, and AI-driven detection across global operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why NMRM as your delivery partner -->
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="feature-row reverse">
+      <div class="feature-text reveal">
+        <span class="badge">Why NMRM</span>
+        <h3>Certified expertise. Pan-India delivery. One accountable team.</h3>
+        <p>Our Palo Alto practice combines certified engineering capability with deep enterprise context. From architecture workshops to migration of legacy firewalls, we own the full lifecycle.</p>
+        <ul class="feature-bullets">
+          <li>Architecture & sizing workshops with risk modeling</li>
+          <li>PoC in your environment — measured against your KPIs</li>
+          <li>Migration from legacy NGFW with zero-downtime cutover</li>
+          <li>Policy hygiene, threat-prevention tuning, and BAU support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation →</a>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>Engagement Models</h4>
+        <ul>
+          <li><span class="pill">Advisory</span> Architecture & roadmap</li>
+          <li><span class="pill">Project</span> Greenfield deployment</li>
+          <li><span class="pill">Migration</span> Legacy firewall replacement</li>
+          <li><span class="pill">Managed</span> 24×7 monitoring & policy ops</li>
+          <li><span class="pill">Training</span> Knowledge transfer & enablement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge">Briefing</span>
+      <h2>Book a 45-minute Palo Alto briefing.</h2>
+      <p>Our team will walk through the Strata, Prisma Cloud, and Cortex platforms — and show how each maps to your current environment and roadmap. No obligation.</p>
+      <div class="actions">
+        <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+        <a href="partners.html" class="btn btn-secondary">Browse Other Partners</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+        </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div>
+      <h5>Solutions</h5>
+      <ul>
+        <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+        <li><a href="services.html#dataprotection">Data Protection</a></li>
+        <li><a href="services.html#infrastructure">Hybrid Infrastructure</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="epr-waste-management.html">EPR &amp; E-Waste</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li style="color: var(--text-muted); font-size: 14px;">Mumbai-400065</li>
+        <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+        <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Commvault Partner — NMRM Infotech</title>
+<meta name="description" content="NMRM Infotech delivers Commvault Cloud — enterprise-grade backup, recovery, and ransomware resilience across hybrid cloud environments." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<style>
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .product-grid { grid-template-columns: 1fr; } }
+  .product {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 26px;
+    transition: all .25s ease;
+  }
+  .product:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .product .tag {
+    display: inline-block; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--cyan); font-weight: 700;
+    background: rgba(34,211,238,0.1); padding: 4px 10px; border-radius: 999px;
+    border: 1px solid rgba(34,211,238,0.2);
+  }
+  .product h3 { font-family: var(--font-display); margin: 14px 0 8px; color: var(--text); font-size: 18px; }
+  .product p  { color: var(--text-muted); font-size: 14px; margin: 0; }
+
+  .vendor-hero {
+    background:
+      radial-gradient(800px 400px at 80% -20%, rgba(0,178,255,0.18), transparent 60%),
+      radial-gradient(600px 400px at 0% 50%, rgba(34,211,238,0.15), transparent 60%),
+      linear-gradient(180deg, #07101F 0%, #0B1729 100%);
+  }
+  .vendor-mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 10px 18px; background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); border-radius: 999px;
+    font-family: var(--font-display); font-weight: 700; color: var(--text); font-size: 14px;
+  }
+  .vendor-mark .swatch { width: 14px; height: 14px; border-radius: 4px; background: #0086D6; }
+
+  .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px;}
+  @media (max-width: 720px) { .metric-row { grid-template-columns: 1fr; } }
+  .metric {
+    background: rgba(0,0,0,0.2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px;
+  }
+  .metric .v { font-family: var(--font-display); font-size: 28px; font-weight: 700;
+    background: linear-gradient(120deg, #fff 30%, var(--cyan) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .metric .l { font-size: 12px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="partners.html" class="active">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero vendor-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="partners.html">Partners</a> &nbsp;/&nbsp; Commvault</div>
+    <div style="margin: 16px 0 12px;"><span class="vendor-mark"><span class="swatch"></span> Commvault Partner</span></div>
+    <h1 class="reveal">Cyber resilience for <span style="color: var(--cyan)">every workload</span>.</h1>
+    <p class="reveal">Enterprise-grade backup, recovery, and data management across hybrid cloud environments. One intelligent platform covering on-premises, cloud, and SaaS — with automated compliance reporting and recovery capabilities that keep downtime near zero.</p>
+    <div class="hero-cta reveal" style="margin-top: 28px;">
+      <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+      <a href="#products" class="btn btn-secondary">Explore the Platform</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="badge">The Challenge</span>
+        <h3>Backup is no longer a checkbox — it's a cyber survival capability.</h3>
+        <p>Ransomware now targets backup repositories directly. SaaS data (Microsoft 365, Salesforce) is no longer "the vendor's problem." Hybrid sprawl means inconsistent SLAs and uncertain recovery. Boards now ask one question: can we recover, fast, and prove it?</p>
+        <ul class="feature-bullets">
+          <li>Ransomware-targeted backup environments</li>
+          <li>Unprotected SaaS and shadow data</li>
+          <li>Inconsistent RPO/RTO across hybrid estates</li>
+          <li>Compliance reporting fragmented across tools</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>What Commvault Delivers</h4>
+        <ul>
+          <li><span class="pill">Protect</span> Every workload, every cloud</li>
+          <li><span class="pill">Detect</span> Anomaly & threat scanning</li>
+          <li><span class="pill">Recover</span> Clean recovery & cyber rewind</li>
+          <li><span class="pill">Govern</span> Automated compliance reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="products" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> The Platform</span>
+      <h2>Commvault Cloud — one platform for full cyber resilience.</h2>
+      <p>Protection, detection, and recovery converged into a single intelligent platform.</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="product reveal">
+        <span class="tag">Protect</span>
+        <h3>Hybrid Cloud Backup</h3>
+        <p>Unified backup across VMs, databases, containers, and physical workloads — on-prem, public cloud, and hybrid.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">SaaS</span>
+        <h3>Cloud Backup for SaaS</h3>
+        <p>Native protection for Microsoft 365, Salesforce, Dynamics, and Google Workspace — your data, your control.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Cyber Recovery</span>
+        <h3>Cleanroom Recovery & Threat Scan</h3>
+        <p>Air-gapped cleanroom recovery, AI-powered threat scanning, and immutable storage to recover with confidence.</p>
+      </div>
+    </div>
+
+    <div class="metric-row reveal" style="margin-top: 36px;">
+      <div class="metric"><div class="v">Near-zero</div><div class="l">RPO / RTO Targets</div></div>
+      <div class="metric"><div class="v">100%</div><div class="l">SaaS Workload Coverage</div></div>
+      <div class="metric"><div class="v">Single</div><div class="l">Console for Hybrid Estate</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="feature-row reverse">
+      <div class="feature-text reveal">
+        <span class="badge">Why NMRM</span>
+        <h3>From assessment to clean-recovery rehearsal.</h3>
+        <p>We design backup architectures that survive ransomware — not just hardware failure. Our team configures immutability, runs recovery drills, and produces compliance evidence for your auditors.</p>
+        <ul class="feature-bullets">
+          <li>Backup architecture review & workload mapping</li>
+          <li>Immutable repository & air-gap design</li>
+          <li>Quarterly clean-recovery rehearsals</li>
+          <li>Audit-ready reporting for SEBI / RBI / DPDP</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Talk to an Expert →</a>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>Engagement Models</h4>
+        <ul>
+          <li><span class="pill">Assessment</span> Backup posture & gap analysis</li>
+          <li><span class="pill">Project</span> Greenfield Commvault Cloud</li>
+          <li><span class="pill">Migration</span> From Veritas / Veeam / NetBackup</li>
+          <li><span class="pill">Managed</span> BaaS & DR-as-a-Service</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge">Briefing</span>
+      <h2>Book a Commvault cyber-resilience briefing.</h2>
+      <p>We'll walk through Commvault Cloud, run a backup posture quick-check on your estate, and map a roadmap to clean recovery within weeks.</p>
+      <div class="actions">
+        <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+        <a href="partners.html" class="btn btn-secondary">Browse Other Partners</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+        </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div><h5>Solutions</h5><ul>
+      <li><a href="services.html#dataprotection">Data Protection</a></li>
+      <li><a href="services.html#storage">Storage & Archive</a></li>
+      <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+    </ul></div>
+    <div><h5>Company</h5><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="epr-waste-management.html">EPR &amp; E-Waste</a></li>
+    </ul></div>
+    <div><h5>Contact</h5><ul>
+      <li style="color: var(--text-muted); font-size: 14px;">Mumbai-400065</li>
+      <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+      <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

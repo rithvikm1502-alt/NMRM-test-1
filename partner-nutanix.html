@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nutanix Partner — NMRM Infotech</title>
+<meta name="description" content="NMRM Infotech delivers Nutanix Cloud Platform — hyperconverged infrastructure unifying compute, storage, and virtualization." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<style>
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .product-grid { grid-template-columns: 1fr; } }
+  .product {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 26px;
+    transition: all .25s ease;
+  }
+  .product:hover { border-color: var(--cyan); transform: translateY(-3px); }
+  .product .tag {
+    display: inline-block; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--cyan); font-weight: 700;
+    background: rgba(34,211,238,0.1); padding: 4px 10px; border-radius: 999px;
+    border: 1px solid rgba(34,211,238,0.2);
+  }
+  .product h3 { font-family: var(--font-display); margin: 14px 0 8px; color: var(--text); font-size: 18px; }
+  .product p  { color: var(--text-muted); font-size: 14px; margin: 0; }
+  .usecase {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+  }
+  .usecase h4 { font-family: var(--font-display); color: var(--cyan); margin: 0 0 8px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+  .usecase p { color: var(--text); font-size: 15px; margin: 0; }
+  .ucgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .ucgrid { grid-template-columns: 1fr; } }
+
+  .vendor-hero {
+    background:
+      radial-gradient(800px 400px at 80% -20%, rgba(20, 184, 166, 0.20), transparent 60%),
+      radial-gradient(600px 400px at 0% 50%, rgba(34,211,238,0.15), transparent 60%),
+      linear-gradient(180deg, #07101F 0%, #0B1729 100%);
+  }
+  .vendor-mark {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 10px 18px; background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); border-radius: 999px;
+    font-family: var(--font-display); font-weight: 700; color: var(--text); font-size: 14px;
+  }
+  .vendor-mark .swatch { width: 14px; height: 14px; border-radius: 4px; background: #14B8A6; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="partners.html" class="active">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero vendor-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="partners.html">Partners</a> &nbsp;/&nbsp; Nutanix</div>
+    <div style="margin: 16px 0 12px;"><span class="vendor-mark"><span class="swatch"></span> Nutanix Partner</span></div>
+    <h1 class="reveal">One platform. <span style="color: var(--cyan)">Any workload, any cloud.</span></h1>
+    <p class="reveal">Traditional infrastructure requires managing separate silos of compute, storage, and networking — increasing complexity, costs, and slowing deployment. Nutanix simplifies IT with a software-defined, hyperconverged platform that unifies them into a single system.</p>
+    <div class="hero-cta reveal" style="margin-top: 28px;">
+      <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+      <a href="#products" class="btn btn-secondary">Explore Capabilities</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="feature-row">
+      <div class="feature-text reveal">
+        <span class="badge">The Challenge</span>
+        <h3>Three-tier infrastructure can't keep up with modern apps.</h3>
+        <p>Separate compute, storage, network, and virtualization layers slow every deployment, every change, every refresh. Cloud-native workloads need cloud-like operations on-prem.</p>
+        <ul class="feature-bullets">
+          <li>Three-tier silos and complex change management</li>
+          <li>Expensive third-party hypervisor licensing</li>
+          <li>Slow provisioning for new workloads</li>
+          <li>Hybrid multi-cloud operations complexity</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>What NMRM Delivers</h4>
+        <ul>
+          <li><span class="pill">Design</span> Cluster sizing & topology</li>
+          <li><span class="pill">Migrate</span> From VMware / three-tier</li>
+          <li><span class="pill">Deploy</span> AHV, AOS, Files, Objects</li>
+          <li><span class="pill">Operate</span> BAU & lifecycle management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="products" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> The Platform</span>
+      <h2>The Nutanix Cloud Platform.</h2>
+      <p>Hyperconverged, hypervisor-included, and ready for hybrid multi-cloud.</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="product reveal">
+        <span class="tag">Core</span>
+        <h3>AOS + AHV</h3>
+        <p>Hyperconverged operating system and built-in AHV hypervisor — no third-party licensing.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Data Services</span>
+        <h3>Unified Storage</h3>
+        <p>Native Files, Objects, and Volumes block storage on the same cluster, with Data Lens analytics.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Hybrid</span>
+        <h3>NC2 on AWS / Azure</h3>
+        <p>Run the same Nutanix stack natively on public cloud with seamless workload mobility.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Database</span>
+        <h3>Nutanix Database Service (NDB)</h3>
+        <p>Database-as-a-Service for PostgreSQL, MySQL, SQL Server, Oracle, MongoDB — automated provisioning, cloning, and patching.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">Kubernetes</span>
+        <h3>Nutanix Kubernetes Platform (NKP)</h3>
+        <p>Production Kubernetes for VMs and containers on the same platform — multi-cluster, multi-cloud, with built-in data services.</p>
+      </div>
+      <div class="product reveal">
+        <span class="tag">AI</span>
+        <h3>Nutanix Enterprise AI</h3>
+        <p>Foundation for the agentic AI era — secure, sovereign AI factories with NVIDIA-validated infrastructure for inference and model serving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Use Cases</span>
+      <h2>Where NMRM deploys Nutanix in India.</h2>
+    </div>
+    <div class="ucgrid reveal">
+      <div class="usecase">
+        <h4>VDI</h4>
+        <p>Persistent and non-persistent virtual desktops at scale.</p>
+      </div>
+      <div class="usecase">
+        <h4>Mixed Workloads</h4>
+        <p>Production databases, file services, and dev/test on one cluster.</p>
+      </div>
+      <div class="usecase">
+        <h4>Edge & ROBO</h4>
+        <p>Compact clusters for branches, factories, and remote sites.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="feature-row reverse">
+      <div class="feature-text reveal">
+        <span class="badge">Why NMRM</span>
+        <h3>We've taken enterprises off three-tier — without drama.</h3>
+        <p>Our Nutanix practice combines sizing rigor, VMware migration experience, and BAU operations support — for clusters that perform and stay healthy long after handover.</p>
+        <ul class="feature-bullets">
+          <li>Cluster sizing & HA architecture</li>
+          <li>Hypervisor migration (VMware to AHV)</li>
+          <li>Files, Objects, Era integration</li>
+          <li>Hybrid NC2 on AWS / Azure design</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation →</a>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="glow"></div>
+        <h4>Engagement Models</h4>
+        <ul>
+          <li><span class="pill">Advisory</span> HCI strategy & sizing</li>
+          <li><span class="pill">Project</span> Greenfield Nutanix</li>
+          <li><span class="pill">Migration</span> VMware to AHV</li>
+          <li><span class="pill">Managed</span> BAU & lifecycle support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge">Briefing</span>
+      <h2>Book a Nutanix briefing.</h2>
+      <p>Our team will walk through the Nutanix portfolio and map it to your environment — a structured 45-minute session, no obligation.</p>
+      <div class="actions">
+        <a href="contact.html" class="btn btn-primary">Request a Briefing →</a>
+        <a href="partners.html" class="btn btn-secondary">Browse Other Partners</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+        </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div><h5>Solutions</h5><ul>
+      <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+      <li><a href="services.html#dataprotection">Data Protection</a></li>
+      <li><a href="services.html#infrastructure">Infrastructure</a></li>
+    </ul></div>
+    <div><h5>Company</h5><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="epr-waste-management.html">EPR &amp; E-Waste</a></li>
+    </ul></div>
+    <div><h5>Contact</h5><ul>
+      <li style="color: var(--text-muted); font-size: 14px;">Mumbai-400065</li>
+      <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+      <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
