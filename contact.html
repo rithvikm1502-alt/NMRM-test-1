@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — NMRM Infotech</title>
+<meta name="description" content="Speak with a specialist at NMRM Infotech. Headquartered in Mumbai. Pan-India delivery and support." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() { emailjs.init({ publicKey: "fi0pXxmnVa6sTtPk9" }); })();
+</script>
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-card {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 36px;
+  }
+  .contact-info-card {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 32px;
+    margin-bottom: 16px;
+  }
+  .contact-info-card h4 {
+    font-family: var(--font-display); font-size: 13px; color: var(--cyan);
+    letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px;
+  }
+  .contact-info-card p { color: var(--text); margin: 0; font-size: 16px; }
+  .contact-info-card a { color: var(--text); }
+
+  .map-wrap {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    height: 320px;
+  }
+  .map-wrap iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) invert(0.92) contrast(0.95); }
+
+  .form-status { margin-top: 14px; font-size: 14px; }
+
+  .quick-row { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 18px; }
+  .quick {
+    background: rgba(0,0,0,0.18); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px 18px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .quick .ic {
+    width: 40px; height: 40px; border-radius: 8px;
+    background: linear-gradient(135deg, rgba(34,211,238,0.18), rgba(27,58,107,0.4));
+    color: var(--cyan); display: grid; place-items: center; font-size: 18px;
+    border: 1px solid var(--border-strong);
+    flex-shrink: 0;
+  }
+  .quick > div:last-child { min-width: 0; flex: 1; }
+  .quick .l { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 2px; }
+  .quick .v { color: var(--text); font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta active">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+    <h1 class="reveal">Let's start with a <span style="color: var(--cyan)">conversation</span>.</h1>
+    <p class="reveal">Tell us about your environment, goals, or the challenge you're trying to solve. A specialist will respond within one business day — no obligation, no pressure.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3 style="font-family: var(--font-display); margin: 0 0 6px; color: var(--text); font-size: 22px;">Send us a message</h3>
+        <p style="color: var(--text-muted); margin: 0 0 22px; font-size: 14px;">All fields marked * are required.</p>
+
+        <form id="contact-form" data-emailjs-form data-service-id="service_1bjx90f" data-template-id="template_4e6qzyl">
+          <div class="form-grid">
+            <label>First name *
+              <input type="text" name="first_name" required placeholder="Aarav" />
+            </label>
+            <label>Last name *
+              <input type="text" name="last_name" required placeholder="Sharma" />
+            </label>
+            <label>Work email *
+              <input type="email" name="user_email" required placeholder="aarav.sharma@company.com" />
+            </label>
+            <label>Phone
+              <input type="tel" name="phone" placeholder="+91 98XXXXXXXX" />
+            </label>
+            <label class="full">Company *
+              <input type="text" name="company" required placeholder="Acme Bank Ltd." />
+            </label>
+            <label class="full">What can we help you with? *
+              <select name="area_of_interest" required>
+                <option value="">Select an area of interest</option>
+                <option>Cybersecurity (Palo Alto, Fortinet, OPSWAT)</option>
+                <option>Data Protection & Backup (Commvault, Quantum)</option>
+                <option>Hybrid Infrastructure (Nutanix, Red Hat)</option>
+                <option>Data Platform & AI (Cloudera)</option>
+                <option>Cryptography & HSM (Utimaco)</option>
+                <option>Application Delivery (Array Networks)</option>
+                <option>API & AI Connectivity (Kong)</option>
+                <option>General enquiry</option>
+              </select>
+            </label>
+            <label class="full">Message *
+              <textarea name="message" required placeholder="Briefly describe your environment and the outcome you're hoping to achieve."></textarea>
+            </label>
+          </div>
+          <!-- Honeypot for spam bots — humans won't see this field; bots that auto-fill all fields will be rejected. -->
+          <div style="position: absolute; left: -9999px; top: -9999px;" aria-hidden="true">
+            <label>Leave this field empty
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+          <div style="margin-top: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <button type="submit" class="btn btn-primary">Send Message →</button>
+            <span style="color: var(--text-dim); font-size: 13px;">Or call us at <a href="tel:+919821896800" style="color: var(--cyan);">+91 98218 96800</a></span>
+          </div>
+          <div class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div>
+        <div class="contact-info-card reveal">
+          <h4>Headquarters</h4>
+          <p>334, Mastermind-4, Royal Palms,<br/>Aarey Colony, Goregaon East,<br/>Mumbai – 400065, Maharashtra, India</p>
+        </div>
+
+        <div class="contact-info-card reveal">
+          <h4>Get In Touch</h4>
+          <div class="quick-row">
+            <div class="quick">
+              <div class="ic">📞</div>
+              <div>
+                <div class="l">Phone</div>
+                <div class="v"><a href="tel:+919821896800" style="color: var(--text);">+91 98218 96800</a></div>
+              </div>
+            </div>
+            <div class="quick">
+              <div class="ic">📧</div>
+              <div>
+                <div class="l">Email</div>
+                <div class="v"><a href="mailto:niraj@nmrminfotech.com" style="color: var(--text);">niraj@nmrminfotech.com</a></div>
+              </div>
+            </div>
+            <div class="quick">
+              <div class="ic">🕓</div>
+              <div>
+                <div class="l">Hours</div>
+                <div class="v">Mon–Sat · 09:30 – 18:00 IST</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-wrap reveal">
+          <iframe
+            src="https://www.google.com/maps?q=Royal+Palms+Aarey+Colony+Goregaon+East+Mumbai&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="NMRM Infotech HQ on map"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner reveal" style="padding: 36px;">
+      <span class="badge">Response SLA</span>
+      <h2 style="font-size: 24px; margin-bottom: 8px;">We respond to every enquiry within one business day.</h2>
+      <p style="margin-bottom: 0;">For urgent existing-customer support, please contact your account team directly or call our main line.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+        </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div><h5>Solutions</h5><ul>
+      <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+      <li><a href="services.html#dataprotection">Data Protection</a></li>
+      <li><a href="services.html#infrastructure">Hybrid Infrastructure</a></li>
+    </ul></div>
+    <div><h5>Company</h5><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="epr-waste-management.html">EPR &amp; E-Waste</a></li>
+    </ul></div>
+    <div><h5>Contact</h5><ul>
+      <li style="color: var(--text-muted); font-size: 14px;">334, Mastermind-4, Royal Palms,<br/>Aarey Colony, Goregaon East,<br/>Mumbai-400065</li>
+      <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+      <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd. — All rights reserved.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
