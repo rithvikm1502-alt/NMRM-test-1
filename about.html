@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — NMRM Infotech</title>
+<meta name="description" content="Since 2009, NMRM Infotech has been a trusted technology partner to India's most demanding enterprises. Our promise: Committed to Serve." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<style>
+  .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 720px) { .vm-grid { grid-template-columns: 1fr; } }
+  .vm-card {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 36px;
+    position: relative; overflow: hidden;
+  }
+  .vm-card::before {
+    content: ""; position: absolute; inset: -1px;
+    background: linear-gradient(135deg, rgba(34,211,238,0.4), transparent 60%);
+    border-radius: var(--radius-lg);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    padding: 1px;
+  }
+  .vm-card .head {
+    font-family: var(--font-display); color: var(--cyan); font-size: 13px;
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .vm-card h3 { font-family: var(--font-display); margin: 0 0 14px; font-size: 24px; color: var(--text); }
+  .vm-card p  { color: var(--text-muted); font-size: 15px; margin: 0; }
+
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 720px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+  }
+  .why-card .ico {
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(34,211,238,0.18), rgba(27,58,107,0.4));
+    color: var(--cyan); border: 1px solid var(--border-strong);
+    margin-bottom: 14px; font-size: 20px;
+  }
+  .why-card h4 { font-family: var(--font-display); margin: 0 0 6px; color: var(--text); font-size: 17px; }
+  .why-card p  { color: var(--text-muted); font-size: 14px; margin: 0; }
+
+  .leader-card {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 36px;
+    display: grid; grid-template-columns: 140px 1fr; gap: 28px; align-items: center;
+  }
+  @media (max-width: 720px) { .leader-card { grid-template-columns: 1fr; text-align: center; } }
+  .leader-avatar {
+    width: 140px; height: 140px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyan), var(--brand-navy));
+    display: grid; place-items: center;
+    font-family: var(--font-display); font-size: 44px; font-weight: 700;
+    color: #fff; box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    margin: 0 auto;
+  }
+  .leader-card h3 { font-family: var(--font-display); margin: 0 0 4px; color: var(--text); font-size: 22px; }
+  .leader-card .role { color: var(--cyan); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+  .leader-card p { color: var(--text-muted); margin: 14px 0 0; font-size: 15px; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Solutions</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About</div>
+    <h1 class="reveal">Since 2009. <span style="color: var(--cyan)">Committed to Serve.</span></h1>
+    <p class="reveal">NMRM Infotech Pvt. Ltd. is a specialist enterprise IT products and solutions provider helping organizations build secure, resilient, and future-ready technology environments — across networking, cybersecurity, hybrid infrastructure, data platforms, data protection, and AI-ready platforms.</p>
+  </div>
+</section>
+
+<!-- Stats banner -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="stats reveal">
+      <div class="stat"><div class="num"><span data-counter="16" data-suffix="+">0</span></div><div class="label">Years In Business</div></div>
+      <div class="stat"><div class="num"><span data-counter="15" data-suffix="+">0</span></div><div class="label">OEM Partners</div></div>
+      <div class="stat"><div class="num"><span data-counter="8" data-suffix="">0</span></div><div class="label">Industries Served</div></div>
+      <div class="stat"><div class="num">Pan</div><div class="label">India Delivery</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision & Mission -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Vision & Mission</span>
+      <h2>Built around a single promise.</h2>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card reveal">
+        <div class="head">Our Vision</div>
+        <h3>The most trusted technology partner in India.</h3>
+        <p>Recognized for integrity, deep expertise, and commitment to transforming businesses through innovative IT solutions that deliver real, measurable value to every organization we serve.</p>
+      </div>
+      <div class="vm-card reveal">
+        <div class="head">Our Mission</div>
+        <h3>Empower enterprises with world-class technology.</h3>
+        <p>Delivering cybersecurity, data protection, network infrastructure, and AI-ready connectivity services that enhance resilience, enable growth, and accelerate digital transformation across every sector we serve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why NMRM -->
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Why Choose NMRM</span>
+      <h2>What sets us apart.</h2>
+      <p>Five things our enterprise customers consistently tell us they value.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="ico">⚖️</div>
+        <h4>Unbiased Recommendations</h4>
+        <p>With 15+ global technology OEM partnerships, we recommend what fits your business — not what fits a sales target.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ico">🔁</div>
+        <h4>Full Lifecycle Ownership</h4>
+        <p>One team from assessment through deployment and post-sales support. No gaps, no handoffs.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ico">🏆</div>
+        <h4>Proven Track Record</h4>
+        <p>Trusted by Accenture, TCS, Tata Communications, Kotak Bank, IDBI Bank, NPCI, Siemens, and L&amp;T — with delivery across BFSI, government, healthcare, manufacturing, and telecom.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ico">🧠</div>
+        <h4>Deep Technical Expertise</h4>
+        <p>Certified engineers across cybersecurity, networking, infrastructure, data platforms, and AI-ready environments.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ico">🇮🇳</div>
+        <h4>Nationwide Reach</h4>
+        <p>Pan-India delivery, support, and supply chain capabilities — onsite or remote, when and where you need us.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ico">🤝</div>
+        <h4>Committed to Serve</h4>
+        <p>Our company-wide promise. Long-term partnerships built on integrity, accountability, and measurable outcomes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Approach -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Our Approach</span>
+      <h2>A methodology built around outcomes — not transactions.</h2>
+      <p>We assess your environment before recommending anything. We design from a portfolio of 15+ global OEM partners — always aligned to your goals, risk profile, and budget. Our certified engineers own deployment end-to-end. And we stay engaged long after go-live, because our measure of success is the outcome you achieve.</p>
+    </div>
+    <div class="process reveal">
+      <div class="step"><div class="num">1</div><h4>Assess</h4><p>Environment, risk posture, business objectives.</p></div>
+      <div class="step"><div class="num">2</div><h4>Design</h4><p>Architecture aligned to budget, scale, compliance.</p></div>
+      <div class="step"><div class="num">3</div><h4>Validate</h4><p>PoC & benchmarking to de-risk every investment.</p></div>
+      <div class="step"><div class="num">4</div><h4>Deploy</h4><p>End-to-end implementation by certified engineers.</p></div>
+      <div class="step"><div class="num">5</div><h4>Operate</h4><p>24×7 support, optimization, lifecycle management.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership -->
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(15,37,71,0.4));">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Leadership</span>
+      <h2>Founded on relationships. Run with rigor.</h2>
+    </div>
+    <div class="leader-card reveal">
+      <div class="leader-avatar">N</div>
+      <div>
+        <h3>Niraj Mandal</h3>
+        <div class="role">Founder & Director</div>
+        <p>Niraj founded NMRM Infotech in 2009 with a clear conviction: that India's enterprises deserve a technology partner who recommends what's right — not what's lucrative. Over 16+ years, NMRM has built lasting partnerships with leading global OEMs and earned the trust of some of India's most demanding institutions across BFSI, government, telecom, and manufacturing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Clients -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span> Trusted By</span>
+      <h2>Enterprises that depend on what we deliver.</h2>
+    </div>
+    <div class="clients-strip reveal">
+      <div class="client-logo">Accenture</div>
+      <div class="client-logo">TCS</div>
+      <div class="client-logo">Tata Communications</div>
+      <div class="client-logo">Kotak Bank</div>
+      <div class="client-logo">IDBI Bank</div>
+      <div class="client-logo">NPCI</div>
+      <div class="client-logo">Siemens</div>
+      <div class="client-logo">L&amp;T</div>
+    </div>
+    <div class="reveal" style="text-align: center; color: var(--text-dim); font-size: 14px; margin-top: 18px; letter-spacing: 0.4px; font-style: italic;">…and many more across BFSI, government, telecom, and manufacturing.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge">Let's Talk</span>
+      <h2>Let's build something resilient, secure, and future-ready — together.</h2>
+      <p>Whether you're modernizing infrastructure, hardening security, or building an AI-ready data platform, our team is ready to help you map the right path.</p>
+      <div class="actions">
+        <a href="contact.html" class="btn btn-primary">Talk to an Expert →</a>
+        <a href="services.html" class="btn btn-secondary">Browse Solutions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+        </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div><h5>Solutions</h5><ul>
+      <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
+      <li><a href="services.html#dataprotection">Data Protection</a></li>
+      <li><a href="services.html#infrastructure">Hybrid Infrastructure</a></li>
+    </ul></div>
+    <div><h5>Company</h5><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="epr-waste-management.html">EPR &amp; E-Waste</a></li>
+    </ul></div>
+    <div><h5>Contact</h5><ul>
+      <li style="color: var(--text-muted); font-size: 14px;">334, Mastermind-4, Royal Palms,<br/>Aarey Colony, Goregaon East,<br/>Mumbai-400065</li>
+      <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+      <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd. — All rights reserved.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
