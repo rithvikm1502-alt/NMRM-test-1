@@ -1,0 +1,36 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/our-partners",              "destination": "/partners.html",          "statusCode": 301 },
+    { "source": "/why-choose-us",             "destination": "/about.html",             "statusCode": 301 },
+    { "source": "/contact-us",                "destination": "/contact.html",           "statusCode": 301 },
+    { "source": "/epr-waste-management",      "destination": "/epr-waste-management.html","statusCode": 301 },
+
+    { "source": "/promise",                   "destination": "/partner-promise.html",   "statusCode": 301 },
+    { "source": "/quantum",                   "destination": "/partner-quantum.html",   "statusCode": 301 },
+    { "source": "/utimaco",                   "destination": "/partner-utimaco.html",   "statusCode": 301 },
+    { "source": "/cloudera",                  "destination": "/partner-cloudera.html",  "statusCode": 301 },
+    { "source": "/array-network",             "destination": "/partner-array.html",     "statusCode": 301 },
+    { "source": "/copy-of-array-network-3",   "destination": "/partner-nutanix.html",   "statusCode": 301 },
+    { "source": "/copy-of-array-network-2",   "destination": "/partner-opswat.html",    "statusCode": 301 },
+    { "source": "/copy-of-array-network-1",   "destination": "/partner-palo-alto.html", "statusCode": 301 },
+    { "source": "/copy-of-array-network",     "destination": "/partner-commvault.html", "statusCode": 301 },
+    { "source": "/quest",                     "destination": "/partner-quest.html",     "statusCode": 301 },
+    { "source": "/fujifilm",                  "destination": "/partner-fujifilm.html",  "statusCode": 301 },
+    { "source": "/red-hat",                   "destination": "/partner-redhat.html",    "statusCode": 301 },
+    { "source": "/xendata",                   "destination": "/partner-xendata.html",   "statusCode": 301 },
+    { "source": "/copy-of-xendata",           "destination": "/partner-cleanstart.html","statusCode": 301 },
+    { "source": "/qlogic",                    "destination": "/partner-qlogic.html",    "statusCode": 301 },
+
+    { "source": "/managed-it-services",       "destination": "/services.html",          "statusCode": 301 },
+    { "source": "/cloud-solutions",           "destination": "/services.html",          "statusCode": 301 },
+    { "source": "/encryption",                "destination": "/services.html",          "statusCode": 301 },
+    { "source": "/cloud-desktop",             "destination": "/services.html",          "statusCode": 301 },
+    { "source": "/data-protection",           "destination": "/services.html",          "statusCode": 301 },
+
+    { "source": "/copy-of-utimaco",           "destination": "/partner-fortinet.html",  "statusCode": 301 },
+    { "source": "/copy-of-why-choose-us-1",   "destination": "/partner-utimaco.html",   "statusCode": 301 }
+  ]
+}

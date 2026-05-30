@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block low-value pages from indexing
+Disallow: /assets/.DS_Store
+
+# Sitemap location
+Sitemap: https://www.nmrminfotech.com/sitemap.xml
