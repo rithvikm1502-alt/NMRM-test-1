@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insights — Case Studies & Articles | NMRM Infotech</title>
+<meta name="description" content="Field-tested case studies and technical articles from NMRM Infotech — practical guidance for Indian enterprise IT leaders across cybersecurity, data protection, hybrid infrastructure, and AI-ready platforms." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/logo.png" />
+<link rel="canonical" href="https://www.nmrminfotech.com/insights" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.nmrminfotech.com/insights" />
+<meta property="og:site_name" content="NMRM Infotech" />
+<meta property="og:title" content="Insights — Case Studies & Articles | NMRM Infotech" />
+<meta property="og:description" content="Field-tested case studies and technical articles from NMRM Infotech — practical guidance for Indian enterprise IT leaders." />
+<meta property="og:image" content="https://www.nmrminfotech.com/assets/logo-cropped.png" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Insights — Case Studies & Articles | NMRM Infotech" />
+<meta name="twitter:description" content="Field-tested case studies and technical articles from NMRM Infotech — practical guidance for Indian enterprise IT leaders." />
+<meta name="twitter:image" content="https://www.nmrminfotech.com/assets/logo-cropped.png" />
+<style>
+  .filter-bar {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin: 28px 0 36px;
+  }
+  .filter-chip {
+    font-family: var(--font-display); font-size: 12px; font-weight: 700;
+    color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase;
+    padding: 8px 14px; border-radius: 999px;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+    cursor: pointer; transition: all .2s ease;
+    user-select: none;
+  }
+  .filter-chip:hover { color: var(--text); border-color: var(--border-strong); }
+  .filter-chip.active {
+    color: var(--cyan); background: rgba(34,211,238,0.1);
+    border-color: rgba(34,211,238,0.4);
+  }
+  .filter-group-label {
+    font-family: var(--font-display); font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text-dim); margin-right: 6px;
+    align-self: center;
+  }
+
+  .insights-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px;
+  }
+  @media (max-width: 900px) { .insights-grid { grid-template-columns: 1fr; } }
+
+  .insight-card {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 32px;
+    display: flex; flex-direction: column;
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    text-decoration: none; color: inherit;
+    position: relative; overflow: hidden;
+  }
+  .insight-card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  }
+  .insight-card .tag-row {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;
+  }
+  .insight-card .type-tag {
+    font-family: var(--font-display); font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px;
+  }
+  .insight-card .type-tag.case-study {
+    background: rgba(34,211,238,0.15); color: var(--cyan);
+    border: 1px solid rgba(34,211,238,0.3);
+  }
+  .insight-card .type-tag.article {
+    background: rgba(200,16,46,0.12); color: #FF6B7A;
+    border: 1px solid rgba(200,16,46,0.3);
+  }
+  .insight-card .type-tag.knowledge-byte {
+    background: rgba(139,92,246,0.15); color: #A78BFA;
+    border: 1px solid rgba(139,92,246,0.35);
+  }
+  .insight-card .industry-tag {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-dim); padding: 4px 10px; border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+  .insight-card h3 {
+    font-family: var(--font-display); font-size: 22px; line-height: 1.25;
+    margin: 0 0 12px; color: var(--text); letter-spacing: -0.01em;
+  }
+  .insight-card .dek {
+    color: var(--text-muted); font-size: 15px; line-height: 1.55;
+    margin: 0 0 22px; flex: 1;
+  }
+  .insight-card .footer-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 18px; border-top: 1px solid var(--border);
+  }
+  .insight-card .meta {
+    font-size: 12px; color: var(--text-dim); letter-spacing: 0.3px;
+  }
+  .insight-card .read-link {
+    color: var(--cyan); font-weight: 700; font-size: 14px;
+    letter-spacing: 0.3px; display: inline-flex; align-items: center; gap: 4px;
+  }
+  .insight-card:hover .read-link { gap: 8px; }
+
+  /* Coming soon / placeholder card variant */
+  .insight-card.placeholder {
+    opacity: 0.55; pointer-events: none;
+    border-style: dashed;
+  }
+  .insight-card.placeholder .read-link { color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="/" class="brand">
+      <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="services">Solutions</a></li>
+      <li><a href="partners">Partners</a></li>
+      <li><a href="insights" class="active">Insights</a></li>
+      <li><a href="about">About</a></li>
+      <li><a href="contact" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; Insights</div>
+    <h1 class="reveal">Field notes from <span style="color: var(--cyan)">Indian enterprise IT</span>.</h1>
+    <p class="reveal">Case studies and technical articles drawn from sixteen years of designing, deploying, and operating mission-critical infrastructure across BFSI, government, telecom, and manufacturing. Practical guidance from the people who built it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Filter bar — purely visual for now; JS filtering can come later as the catalogue grows -->
+    <div class="filter-bar reveal">
+      <span class="filter-group-label">Type</span>
+      <span class="filter-chip active">All</span>
+      <span class="filter-chip">Case Studies</span>
+      <span class="filter-chip">Articles</span>
+      <span class="filter-chip">Knowledge Bytes</span>
+      <span style="flex: 1; min-width: 20px;"></span>
+      <span class="filter-group-label">Industry</span>
+      <span class="filter-chip">BFSI</span>
+      <span class="filter-chip">Government</span>
+      <span class="filter-chip">Telecom</span>
+      <span class="filter-chip">Manufacturing</span>
+    </div>
+
+    <div class="insights-grid">
+
+      <!-- Knowledge Byte #1 — PUBLISHED -->
+      <a class="insight-card reveal" href="insights/dpdpa-compliance-implementation">
+        <div class="tag-row">
+          <span class="type-tag knowledge-byte">Knowledge Byte 01</span>
+          <span class="industry-tag">Compliance</span>
+          <span class="industry-tag">Data Protection</span>
+        </div>
+        <h3>The 70% of DPDPA compliance most enterprises underestimate</h3>
+        <p class="dek">The easy 30% — a privacy policy, a consent banner, a DPO charter — is done in weeks. The hard 70% — discovery, consent infrastructure, processor terms, rehearsed breach reporting — takes the full runway to May 2027.</p>
+        <div class="footer-row">
+          <span class="meta">6 min read · July 2026</span>
+          <span class="read-link">Read knowledge byte →</span>
+        </div>
+      </a>
+
+      <!-- Case Study placeholder — coming soon (topic teased) -->
+      <div class="insight-card placeholder reveal">
+        <div class="tag-row">
+          <span class="type-tag case-study">Case Study</span>
+          <span class="industry-tag">Government</span>
+          <span class="industry-tag">Critical Infrastructure</span>
+        </div>
+        <h3>Air-gapped file transfer for a central PSU with OPSWAT MetaDefender</h3>
+        <p class="dek">Designing a one-way data import pipeline for classified networks — deep CDR, multi-engine scanning, and a tamper-proof chain of custody.</p>
+        <div class="footer-row">
+          <span class="meta">Coming soon</span>
+          <span class="read-link">In production →</span>
+        </div>
+      </div>
+
+      <!-- Article placeholder — coming soon (topic teased) -->
+      <div class="insight-card placeholder reveal">
+        <div class="tag-row">
+          <span class="type-tag article">Article</span>
+          <span class="industry-tag">Cryptography</span>
+          <span class="industry-tag">BFSI</span>
+        </div>
+        <h3>Choosing an HSM for Indian payment infrastructure: FIPS 140-2 vs 140-3, Payment vs General Purpose</h3>
+        <p class="dek">A practical decision framework for selecting the right hardware security module for tokenisation, PIN translation, and key management workloads.</p>
+        <div class="footer-row">
+          <span class="meta">Coming soon</span>
+          <span class="read-link">In production →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge">Talk to a specialist</span>
+      <h2>Have a specific environment in mind?</h2>
+      <p>Our team will walk you through how similar organisations have approached the same challenge — and what we would recommend for your environment specifically.</p>
+      <div class="actions">
+        <a href="contact" class="btn btn-primary">Talk to an Expert →</a>
+        <a href="services" class="btn btn-secondary">Browse Solutions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="assets/logo-cropped.png" alt="NMRM Infotech" />
+      </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div>
+      <h5>Solutions</h5>
+      <ul>
+        <li><a href="services#cybersecurity">Cybersecurity</a></li>
+        <li><a href="services#dataprotection">Data Protection</a></li>
+        <li><a href="services#infrastructure">Hybrid Infrastructure</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about">About Us</a></li>
+        <li><a href="partners">Partners</a></li>
+        <li><a href="insights">Insights</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="epr-waste-management">EPR &amp; E-Waste</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li style="color: var(--text-muted); font-size: 14px;">334, Mastermind-4, Royal Palms,<br/>Aarey Colony, Goregaon East,<br/>Mumbai-400065</li>
+        <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+        <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd. — All rights reserved.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJY8J39C3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJY8J39C3');
+</script>
+</body>
+</html>

@@ -44,6 +44,20 @@
   </url>
 
   <url>
+    <loc>https://www.nmrminfotech.com/insights</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nmrminfotech.com/insights/dpdpa-compliance-implementation</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.nmrminfotech.com/partner-palo-alto</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
