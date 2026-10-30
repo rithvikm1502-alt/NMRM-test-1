@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Choosing an HSM for Indian Payment Infrastructure | NMRM Infotech</title>
+<meta name="description" content="A practical decision framework for selecting an HSM for Indian payment and enterprise workloads — FIPS 140-2 vs 140-3, Payment vs General Purpose, on-prem vs cloud." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css" />
+<link rel="icon" href="../assets/logo.png" />
+<link rel="canonical" href="https://www.nmrminfotech.com/insights/choosing-an-hsm-indian-payment-infrastructure" />
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.nmrminfotech.com/insights/choosing-an-hsm-indian-payment-infrastructure" />
+<meta property="og:site_name" content="NMRM Infotech" />
+<meta property="og:title" content="Choosing an HSM for Indian Payment Infrastructure — a practical decision framework" />
+<meta property="og:description" content="FIPS 140-2 vs 140-3, Payment vs General Purpose, on-prem vs cloud. A working guide for IT and security leaders selecting an HSM for Indian workloads." />
+<meta property="og:image" content="https://www.nmrminfotech.com/assets/logo-cropped.png" />
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Choosing an HSM for Indian Payment Infrastructure — a practical decision framework" />
+<meta name="twitter:description" content="FIPS 140-2 vs 140-3, Payment vs General Purpose, on-prem vs cloud. A working guide for IT and security leaders selecting an HSM." />
+<meta name="twitter:image" content="https://www.nmrminfotech.com/assets/logo-cropped.png" />
+<style>
+  .article-layout {
+    display: grid; grid-template-columns: 240px 1fr; gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; gap: 28px; } }
+
+  .article-toc {
+    position: sticky; top: 96px;
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 24px 22px;
+  }
+  @media (max-width: 900px) { .article-toc { position: static; } }
+  .article-toc h4 {
+    font-family: var(--font-display); font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--cyan); margin: 0 0 14px;
+  }
+  .article-toc ol {
+    list-style: none; padding: 0; margin: 0;
+    counter-reset: toc-counter;
+  }
+  .article-toc li {
+    counter-increment: toc-counter;
+    font-size: 13px; line-height: 1.5; padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-toc li:last-child { border-bottom: none; }
+  .article-toc li::before {
+    content: counter(toc-counter) ".";
+    color: var(--text-dim); margin-right: 8px; font-family: var(--font-display);
+  }
+  .article-toc a {
+    color: var(--text-muted); transition: color .15s ease;
+  }
+  .article-toc a:hover { color: var(--cyan); }
+
+  .article-body { font-size: 16px; line-height: 1.75; color: var(--text-muted); max-width: 760px; }
+  .article-body .lead {
+    font-size: 18px; line-height: 1.65; color: var(--text);
+    margin-bottom: 28px;
+  }
+  .article-body h2 {
+    font-family: var(--font-display); font-size: 26px;
+    color: var(--text); margin: 44px 0 14px; letter-spacing: -0.01em;
+    scroll-margin-top: 100px;
+  }
+  .article-body h3 {
+    font-family: var(--font-display); font-size: 18px;
+    color: var(--text); margin: 28px 0 8px;
+  }
+  .article-body p { margin: 0 0 18px; }
+  .article-body ul, .article-body ol { margin: 0 0 22px; padding-left: 24px; }
+  .article-body li { margin-bottom: 8px; }
+  .article-body strong { color: var(--text); }
+  .article-body a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(34,211,238,0.3); }
+  .article-body a:hover { border-bottom-color: var(--cyan); }
+  .article-body .callout {
+    background: rgba(34,211,238,0.06); border: 1px solid rgba(34,211,238,0.2);
+    border-left: 3px solid var(--cyan);
+    border-radius: 8px; padding: 20px 24px; margin: 24px 0;
+    font-size: 15px;
+  }
+  .article-body .callout strong { color: var(--cyan); }
+
+  .compare-table {
+    width: 100%; border-collapse: collapse;
+    margin: 22px 0 28px;
+    background: rgba(0,0,0,0.18); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+    font-size: 14px;
+  }
+  .compare-table th {
+    background: rgba(34,211,238,0.06);
+    color: var(--cyan); text-align: left;
+    font-family: var(--font-display); font-size: 12px; letter-spacing: 1px;
+    text-transform: uppercase; font-weight: 700;
+    padding: 12px 16px; border-bottom: 1px solid var(--border);
+  }
+  .compare-table td {
+    color: var(--text); padding: 12px 16px;
+    border-bottom: 1px solid var(--border); vertical-align: top;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table td:first-child { color: var(--text); font-weight: 600; }
+
+  .article-byline {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-byline .avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyan), var(--brand-navy));
+    display: grid; place-items: center;
+    font-family: var(--font-display); font-size: 16px; font-weight: 700;
+    color: #fff;
+  }
+  .article-byline .by-meta { font-size: 13px; color: var(--text-muted); }
+  .article-byline .by-meta strong { color: var(--text); display: block; }
+
+  .related-bar {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    margin-top: 56px;
+  }
+  @media (max-width: 720px) { .related-bar { grid-template-columns: 1fr; } }
+  .related-card {
+    background: var(--bg-2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px;
+    text-decoration: none; transition: border-color .2s ease;
+  }
+  .related-card:hover { border-color: var(--cyan); }
+  .related-card .eyebrow {
+    font-family: var(--font-display); font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;
+    display: block;
+  }
+  .related-card h4 {
+    font-family: var(--font-display); margin: 0; font-size: 16px;
+    color: var(--text); letter-spacing: -0.01em;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <nav class="nav">
+    <a href="/" class="brand">
+      <img src="../assets/logo-cropped.png" alt="NMRM Infotech" />
+      <div class="brand-text">
+        <span class="brand-name">NMRM Infotech</span>
+        <span class="brand-tag">Committed to Serve</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Solutions</a></li>
+      <li><a href="/partners">Partners</a></li>
+      <li><a href="/insights" class="active">NMRM Insights</a></li>
+      <li><a href="/contact" class="nav-cta">Talk to an Expert →</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/insights">NMRM Insights</a> &nbsp;/&nbsp; Article</div>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px;">
+      <span style="font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 4px; background: rgba(200,16,46,0.12); color: #FF6B7A; border: 1px solid rgba(200,16,46,0.3);">Article</span>
+      <span style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); padding: 5px 12px; border-radius: 4px; border: 1px solid var(--border);">Cryptography</span>
+      <span style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); padding: 5px 12px; border-radius: 4px; border: 1px solid var(--border);">BFSI</span>
+    </div>
+    <h1 class="reveal">Choosing an HSM for Indian <span style="color: var(--cyan)">payment infrastructure</span>.</h1>
+    <p class="reveal">FIPS 140-2 vs 140-3. Payment HSM vs General Purpose. On-prem vs cloud. A working decision framework for security and infrastructure leaders selecting the hardware that will hold their most sensitive keys for the next five to seven years.</p>
+    <p style="color: var(--text-dim); font-size: 13px; letter-spacing: 0.4px; margin-top: 18px;">9 min read · Published August 2026 · NMRM Editorial</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="article-layout">
+
+      <!-- TOC -->
+      <aside class="article-toc reveal">
+        <h4>In this article</h4>
+        <ol>
+          <li><a href="#why-now">Why the choice matters now</a></li>
+          <li><a href="#fips">FIPS 140-2 vs FIPS 140-3</a></li>
+          <li><a href="#split">Payment vs General Purpose</a></li>
+          <li><a href="#payment">When you need a Payment HSM</a></li>
+          <li><a href="#general">When General Purpose is right</a></li>
+          <li><a href="#deploy">On-prem, private cloud, or hyperscaler</a></li>
+          <li><a href="#framework">The selection framework</a></li>
+          <li><a href="#partner">What to ask an implementation partner</a></li>
+        </ol>
+      </aside>
+
+      <!-- Body -->
+      <div class="article-body">
+
+        <div class="article-byline">
+          <div class="avatar">N</div>
+          <div class="by-meta">
+            <strong>NMRM Editorial</strong>
+            Reviewed by the NMRM cryptography practice
+          </div>
+        </div>
+
+        <p class="lead">HSMs are the hardware most Indian enterprises think about least — until a decision has to be made. Then it becomes one of the most consequential purchases the security team will sign off on for the next five to seven years, because the wrong choice is expensive to walk back and painful to operate around. This guide is the framework we use with our BFSI and payment customers when they ask what to buy.</p>
+
+        <h2 id="why-now">Why the choice matters now</h2>
+        <p>Three trends are converging that make 2026 a decisive year for HSM procurement in India.</p>
+        <p><strong>Payment volumes keep climbing.</strong> UPI, card-not-present, tokenised card transactions, and prepaid instruments all continue to scale. Each transaction consumes cryptographic operations, and the mix is shifting toward operations that are HSM-hungry — token issuance and detokenisation, 3-D Secure authentication, EMV script processing.</p>
+        <p><strong>Certification baselines are shifting.</strong> FIPS 140-2 stopped accepting new module validations in September 2021, and its validated modules move from the active list to the historical list on the standard NIST timeline. FIPS 140-3 is now the current baseline. Any HSM procured in 2026 that is expected to serve for the next half-decade should be FIPS 140-3 certified at the outset — not scheduled for revalidation.</p>
+        <p><strong>Regulatory expectations are tightening around cryptographic control.</strong> RBI's cyber security framework, the DPDP Act, and CCA guidance for licensed certifying authorities all raise the bar on what "protected key material" means. Software key stores and general-purpose servers holding cryptographic material are increasingly hard to defend at audit — even when the practical risk was always the reason to move to hardware.</p>
+
+        <h2 id="fips">FIPS 140-2 vs FIPS 140-3 — what actually changes</h2>
+        <p>FIPS 140 is the U.S. federal standard for cryptographic module security. It defines four security levels (Level 1 through Level 4) and a set of physical, logical, and operational requirements a module must meet at each level. Most enterprise HSMs target Level 3 (tamper-responsive, identity-based operator authentication) or Level 4 (envelope of protection with active monitoring against sophisticated physical attack).</p>
+        <p>FIPS 140-3 is aligned to <code>ISO/IEC 19790:2012</code> rather than being an incremental revision of 140-2. In practical terms:</p>
+        <ul>
+          <li><strong>Non-invasive attack resistance</strong> is formally in scope. Side-channel and fault-injection resistance is no longer implicit — it must be demonstrated.</li>
+          <li><strong>Authentication requirements</strong> are stricter, particularly around multi-factor operator authentication at higher levels.</li>
+          <li><strong>Self-tests and error states</strong> have tightened definitions, particularly around how the module must behave when a self-test fails.</li>
+          <li><strong>Firmware and configuration control</strong> requirements are more explicit — how firmware is signed, updated, and audited must be documented and validated.</li>
+        </ul>
+        <p>What this means for procurement: <strong>plan for FIPS 140-3 on any new deployment.</strong> Existing FIPS 140-2 hardware remains usable through its validation lifecycle, but assume the module you buy in 2026 is what you will operate through 2030 and beyond — well past the point at which 140-2 references in the market will read as legacy.</p>
+
+        <div class="callout">
+          <strong>Common misconception:</strong> FIPS 140-3 is often assumed to be a certification "refresh" — same hardware, new certificate. In practice, some 140-2 platforms cannot meet the non-invasive attack resistance requirements without hardware revision. Assume a new HSM generation when planning a 140-3 rollout, not a paperwork upgrade. Ask the vendor for the specific certificate number and level; check it on the NIST CMVP validation list rather than accepting a marketing claim.
+        </div>
+
+        <h2 id="split">Payment HSM vs General Purpose HSM — the fundamental split</h2>
+        <p>Before certification level, deployment model, or vendor, the first question is which class of HSM you actually need. The market splits cleanly.</p>
+
+        <table class="compare-table">
+          <thead>
+            <tr><th>&nbsp;</th><th>Payment HSM</th><th>General Purpose HSM</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Purpose</td><td>Payments processing: PIN, EMV, tokenisation, 3-D Secure</td><td>Arbitrary cryptography: signing, encryption, key management</td></tr>
+            <tr><td>Core APIs</td><td>Vendor-proprietary payment command sets (e.g. Atalla, payShield)</td><td>PKCS#11, KMIP, JCE, Microsoft CNG, OpenSSL engines</td></tr>
+            <tr><td>Certifications</td><td>FIPS 140 <em>and</em> PCI PTS HSM (v3 / v4)</td><td>FIPS 140 (Common Criteria in some cases)</td></tr>
+            <tr><td>Typical vendors in India</td><td>Utimaco Atalla, Thales payShield</td><td>Utimaco SecurityServer / CryptoServer, Thales Luna, Entrust nShield, AWS CloudHSM</td></tr>
+            <tr><td>Where you find it</td><td>Card issuer platforms, payment switches, PIN mailers, ATM networks</td><td>KMS backends, PKI, code signing, database TDE, application encryption</td></tr>
+          </tbody>
+        </table>
+
+        <p>The two are not interchangeable at the workload level. A Payment HSM understands PIN blocks, Zone Master Keys, Terminal Master Keys, and EMV session key derivation as first-class primitives, with hardware acceleration and PCI-certified command flows around them. A General Purpose HSM does not — attempting to implement payment protocols on top of a General Purpose HSM means writing standards in software, which is exactly the layer the HSM is meant to remove from attack surface.</p>
+
+        <h2 id="payment">When you need a Payment HSM specifically</h2>
+        <p>You need a Payment HSM if your workload includes any of the following, at anything approaching production scale:</p>
+        <ul>
+          <li><strong>PIN translation</strong> between issuer and acquirer, or across zones within an issuer estate</li>
+          <li><strong>EMV script generation and ARQC verification</strong> for card networks</li>
+          <li><strong>3-D Secure authentication</strong> — key derivation for the ACS, OTP generation, cryptogram verification</li>
+          <li><strong>Card tokenisation and detokenisation</strong> for network tokens (Visa VTS, Mastercard MDES) or issuer-side tokenisation vaults</li>
+          <li><strong>Cardholder verification and personalisation</strong> — key ceremonies for card issuance, EMV chip personalisation data preparation</li>
+          <li><strong>Payment credential provisioning</strong> for HCE / cloud-based payments and wallet ecosystems</li>
+        </ul>
+        <p>For these workloads, certifications matter beyond FIPS 140-3. <strong>PCI PTS HSM (Payment Card Industry PIN Transaction Security — HSM) v3 or v4</strong> is the payments-industry validation you need to demonstrate to card networks and payment regulators. It is separate from FIPS validation and has its own lifecycle. Both are required for most payment deployments.</p>
+
+        <h2 id="general">When a General Purpose HSM is the right answer</h2>
+        <p>General Purpose HSMs are the right choice for almost everything else that needs hardware-anchored cryptography:</p>
+        <ul>
+          <li><strong>Key management systems</strong> — as the root of trust behind an enterprise KMS, backing BYOK flows to cloud providers, or protecting master keys for envelope encryption</li>
+          <li><strong>Public Key Infrastructure</strong> — root CA and issuing CA private keys, code-signing CA keys, and time-stamping authority keys</li>
+          <li><strong>Code and container signing</strong> — application binary signing, container image signing, firmware signing, particularly under supply-chain scrutiny</li>
+          <li><strong>Database encryption</strong> — TDE master keys, column-level encryption keys, and the wrapping keys that back application-layer encryption</li>
+          <li><strong>Backup and archive encryption</strong> — increasingly relevant given data-localisation requirements, where the encryption keys must remain in India even if backup targets are cloud-based</li>
+          <li><strong>Digital signatures for high-value workflows</strong> — regulatory filings, contracts, medical records, digital identity assertions</li>
+          <li><strong>API request signing at scale</strong> — inter-service authentication for microservice meshes, particularly where the signing key must not live in application memory</li>
+        </ul>
+
+        <h2 id="deploy">On-prem, private cloud HSM, or hyperscaler cloud HSM</h2>
+        <p>Once workload class is settled, deployment model is the next axis.</p>
+        <p><strong>On-premises HSM appliances</strong> remain the default for payment workloads and for any general-purpose workload where the customer wants full physical custody of key material. Practical implications: rack space, HA cluster planning (typically pairs or triples for production), secure key ceremony logistics, and a hardened facility to house the appliances.</p>
+        <p><strong>Private-tenant cloud HSM</strong> (Utimaco's u.trust family, Thales Data Protection on Demand, and similar offerings) provides dedicated hardware operated by the vendor. Attractive when facility investment is prohibitive or when the workload can accept managed-service operational overheads. Verify Indian-region availability and the vendor's cross-border support access policy carefully.</p>
+        <p><strong>Hyperscaler cloud HSM</strong> (AWS CloudHSM, Azure Key Vault Managed HSM, GCP Cloud HSM) is convenient to consume from cloud-native workloads. For Indian payment workloads specifically, verify the current FIPS 140-3 status of the offering, its India-region deployment options, and whether it meets the payment-specific certifications you need. For most payment workloads today, hyperscaler HSMs are complements rather than replacements for on-premises Payment HSMs.</p>
+
+        <div class="callout">
+          <strong>Localisation caution:</strong> If your workload must comply with RBI's data localisation directive (see also our <a href="/insights/rbi-data-localisation-2026">practical guide to that directive</a>), your HSMs and the key material they protect must remain within India. This includes the management plane, firmware update channel, and remote support access — not just the primary key storage. Trace the chain end to end during procurement, not after.
+        </div>
+
+        <h2 id="framework">The selection framework</h2>
+        <p>A working decision sequence:</p>
+        <ol>
+          <li><strong>Classify the workload.</strong> Payment or general purpose? If both, plan two separate estates — do not compromise by forcing one to serve both.</li>
+          <li><strong>Set the certification floor.</strong> For Payment: FIPS 140-3 Level 3 minimum, PCI PTS HSM v4 current. For General Purpose: FIPS 140-3 Level 3 for most workloads; Level 4 for the highest-assurance root keys (e.g. root CA, master wrapping keys).</li>
+          <li><strong>Size for throughput.</strong> Transactions per second × cryptographic operations per transaction, plus 40-50% headroom for HA, growth, and peak load. Payment workloads have very different peak profiles from general-purpose ones — model both.</li>
+          <li><strong>Confirm integration paths.</strong> Does your KMS, PKI, database, or application consume the HSM through a native SDK (PKCS#11, KMIP, JCE) or does it require custom integration? Custom integration is a real project — factor its cost and timeline.</li>
+          <li><strong>Vendor viability and India presence.</strong> HSMs are 7-10 year assets. Choose vendors with local TAC (Technical Assistance Centre) support, spare-parts availability in country, and a documented product roadmap. Verify the OEM's own operational SLAs for firmware updates and vulnerability disclosure.</li>
+          <li><strong>Total cost, not sticker price.</strong> HA cluster hardware, secure installation and key ceremony (M-of-N custody, key custodian appointments), initial operator training, and steady-state operations — HSMs typically cost 2× to 3× their appliance price when the full lifecycle is loaded in.</li>
+        </ol>
+
+        <h2 id="partner">What to ask an implementation partner</h2>
+        <p>The right implementation partner makes the difference between an HSM that becomes a trusted platform and one that becomes an operational headache. Questions worth asking:</p>
+        <ul>
+          <li>How many HSM engagements have you delivered in the last three years, and how many are still in operation with your support?</li>
+          <li>Do your engineers hold current OEM certifications on the specific platform you are proposing?</li>
+          <li>Can you produce a redacted example of a key ceremony script from a previous engagement?</li>
+          <li>Who owns firmware update planning after go-live — you, the customer, or the OEM?</li>
+          <li>What is your tamper-event runbook — the first hour, first day, and first week response?</li>
+          <li>Do you have direct escalation to the OEM's engineering, or only to the OEM's front-line support?</li>
+        </ul>
+        <p>NMRM Infotech has worked with Indian BFSI and enterprise customers on HSM selection, deployment, and ongoing operations for over a decade — including as a <a href="/partner-utimaco">Utimaco partner</a> across their General Purpose (SecurityServer / CryptoServer) and Payment (Atalla) portfolios. If you are working through a selection or a deployment plan, <a href="/contact">our cryptography practice is happy to walk through the decision framework</a> against your specific environment.</p>
+
+        <div class="callout" style="margin-top: 36px;">
+          <strong>Disclaimer:</strong> This article is intended as practical guidance for technology and security leaders evaluating hardware security modules for Indian payment and enterprise cryptography workloads. It is not compliance, certification, or legal advice. Specific certifications, validation lifecycles, and regulatory obligations should be verified against the current NIST CMVP, PCI SSC, RBI, and CCA publications applicable to your organisation.
+        </div>
+
+        <!-- Related -->
+        <div class="related-bar">
+          <a class="related-card" href="/partner-utimaco">
+            <span class="eyebrow">Solution Partner</span>
+            <h4>Explore Utimaco HSM solutions →</h4>
+          </a>
+          <a class="related-card" href="/insights">
+            <span class="eyebrow">More from NMRM Insights</span>
+            <h4>Back to all case studies &amp; articles →</h4>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="badge">Practical HSM guidance</span>
+      <h2>Walk through your HSM decision with our cryptography team.</h2>
+      <p>Whether you are refreshing an existing estate, moving to FIPS 140-3, or evaluating your first Payment HSM deployment, our team will walk the decision against your specific workload, throughput, and compliance profile — without a scripted sales pitch.</p>
+      <div class="actions">
+        <a href="/contact" class="btn btn-primary">Talk to our Cryptography Practice →</a>
+        <a href="/partner-utimaco" class="btn btn-secondary">Utimaco Solutions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="brand-foot">
+        <img src="../assets/logo-cropped.png" alt="NMRM Infotech" />
+      </div>
+      <p class="about">Specialist enterprise IT products and solutions provider. Established 2009, India.</p>
+    </div>
+    <div>
+      <h5>Solutions</h5>
+      <ul>
+        <li><a href="/services#cybersecurity">Cybersecurity</a></li>
+        <li><a href="/services#dataprotection">Data Protection</a></li>
+        <li><a href="/services#infrastructure">Hybrid Infrastructure</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/partners">Partners</a></li>
+        <li><a href="/insights">NMRM Insights</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/epr-waste-management">EPR &amp; E-Waste</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li style="color: var(--text-muted); font-size: 14px;">334, Mastermind-4, Royal Palms,<br/>Aarey Colony, Goregaon East,<br/>Mumbai-400065</li>
+        <li><a href="tel:+919821896800">+91 98218 96800</a></li>
+        <li><a href="mailto:niraj@nmrminfotech.com">niraj@nmrminfotech.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 NMRM Infotech Pvt. Ltd. — All rights reserved.</div>
+    <div>Established 2009</div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJY8J39C3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJY8J39C3');
+</script>
+</body>
+</html>
